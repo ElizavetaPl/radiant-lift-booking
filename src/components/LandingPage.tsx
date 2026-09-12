@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ArrowDown, ArrowRight, Award, Check, Clock3, FileCheck2, Heart, Menu, ShieldCheck, Sparkles, X, type LucideIcon } from "lucide-react";
+import { ArrowDown, ArrowRight, Award, Check, Clock3, FileCheck2, Heart, Menu, ShieldCheck, Sparkles, Star, X, type LucideIcon } from "lucide-react";
 
+import beforeAfterImage from "@/assets/before-after.jpg";
 import heroImage from "@/assets/hero-lifting.jpg";
-import skinImage from "@/assets/skin-detail.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { BookingDialog } from "@/components/BookingDialog";
