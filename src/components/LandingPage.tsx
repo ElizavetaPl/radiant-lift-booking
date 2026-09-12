@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ArrowDown, ArrowRight, Award, Check, Clock3, FileCheck2, Heart, Menu, ShieldCheck, Sparkles, X, type LucideIcon } from "lucide-react";
+import { ArrowDown, ArrowRight, Award, Check, Clock3, FileCheck2, Heart, Menu, ShieldCheck, Sparkles, Star, X, type LucideIcon } from "lucide-react";
 
+import beforeAfterImage from "@/assets/before-after.jpg";
 import heroImage from "@/assets/hero-lifting.jpg";
-import skinImage from "@/assets/skin-detail.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { BookingDialog } from "@/components/BookingDialog";
@@ -62,7 +62,7 @@ export function LandingPage() {
             <h1 className="max-w-3xl font-serif text-5xl font-medium leading-[0.94] sm:text-7xl lg:text-[5.7rem]">Лифтинг и сияние кожи за один визит</h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 sm:text-lg">Без операции, реабилитации и эффекта «перекачанного лица». Ультразвуковой SMAS-лифтинг укрепляет глубокий каркас, а премиальная биоревитализация возвращает коже качество и свет.</p>
             <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Button variant="luxury" size="luxury" onClick={openBooking}>Получить 3D-консультацию <ArrowRight /></Button>
+              <Button variant="luxury" size="luxury" onClick={openBooking}>Получить консультацию <ArrowRight /></Button>
               <p className="max-w-[240px] text-xs leading-relaxed text-muted-foreground">Бесплатно · 30 минут<br />Без обязательств</p>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs text-foreground/75"><span className="flex items-center gap-2"><Check className="size-4 text-primary" /> Медицинский договор</span><span className="flex items-center gap-2"><Check className="size-4 text-primary" /> Сертифицированные препараты</span></div>
@@ -87,7 +87,7 @@ export function LandingPage() {
             <article className="grid grid-cols-[auto_1fr] gap-5"><span className="font-serif text-5xl text-primary">01</span><div><h3 className="font-serif text-3xl">SMAS-лифтинг</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Сфокусированный ультразвук воздействует на мышечно-апоневротический слой. Ткани уплотняются, овал становится чётче, запускается обновление коллагена.</p><p className="mt-5 text-xs font-semibold uppercase text-champagne-soft">Глубина · 4,5 / 3,0 / 1,5 мм</p></div></article>
             <article className="grid grid-cols-[auto_1fr] gap-5"><span className="font-serif text-5xl text-primary">02</span><div><h3 className="font-serif text-3xl">Биоревитализация</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">Премиальный препарат насыщает дерму влагой и активными компонентами. Кожа приобретает плотность, ровный тон и естественное сияние.</p><p className="mt-5 text-xs font-semibold uppercase text-champagne-soft">Качество · Увлажнение · Свет</p></div></article>
           </div>
-          <div className="relative h-64 overflow-hidden sm:h-96"><img src={skinImage} width={1536} height={1024} loading="lazy" alt="Естественный результат лифтинга и сияющая кожа" className="h-full w-full object-cover" /></div>
+          <div className="relative h-64 overflow-hidden sm:h-96"><img src={beforeAfterImage} width={1536} height={1024} loading="lazy" alt="Сравнение до и после процедуры лифтинга и биоревитализации" className="h-full w-full object-cover" /></div>
         </div>
       </section>
 
@@ -97,9 +97,24 @@ export function LandingPage() {
       </section>
 
       <section id="results" className="border-y border-border bg-surface-raised py-20 sm:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center lg:gap-20">
-          <div><p className="eyebrow">История пациентки</p><p className="mt-4 font-serif text-2xl text-muted-foreground">Елена · 43 года · Москва</p><div className="mt-8 flex gap-1 text-primary" aria-label="Оценка 5 из 5">★★★★★</div></div>
-          <blockquote className="font-serif text-4xl leading-tight sm:text-5xl">«Коллеги спрашивали, где я так хорошо отдохнула. А я просто снова увидела в зеркале себя — только свежую и спокойную»<footer className="mt-8 font-sans text-sm leading-relaxed text-muted-foreground">— Через 6 недель после процедуры. Результат индивидуален и зависит от исходного состояния тканей.</footer></blockquote>
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="text-center"><p className="eyebrow">Истории пациенток</p><h2 className="mt-4 font-serif text-5xl sm:text-6xl">Результат, который замечают</h2></div>
+          <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { name: "Елена", age: 43, city: "Москва", quote: "Коллеги спрашивали, где я так хорошо отдохнула. А я просто снова увидела в зеркале себя — только свежую и спокойную.", note: "Через 6 недель после процедуры" },
+              { name: "Анна", age: 39, city: "Санкт-Петербург", quote: "Боялась, что лицо будет замороженным. Но мимика осталась живой, а овал — чётким. Это именно тот результат, который я хотела.", note: "Через 2 месяца после процедуры" },
+              { name: "Марина", age: 47, city: "Казань", quote: "Процедура заняла чуть больше часа, а выгляжу так, будто выспалась несколько лет. Даже муж заметил разницу.", note: "Через 3 недели после процедуры" },
+            ].map((item) => (
+              <article key={item.name} className="bg-background p-7 sm:p-8">
+                <div className="flex gap-1 text-primary" aria-label="Оценка 5 из 5"><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /></div>
+                <blockquote className="mt-6 font-serif text-2xl leading-tight">«{item.quote}»</blockquote>
+                <footer className="mt-8 text-sm leading-relaxed text-muted-foreground">
+                  <p className="font-medium text-foreground">{item.name} · {item.age} года · {item.city}</p>
+                  <p className="mt-1">— {item.note}. Результат индивидуален.</p>
+                </footer>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -112,7 +127,7 @@ export function LandingPage() {
 
       <section id="faq" className="bg-surface-raised py-20 sm:py-28"><div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20"><div><p className="eyebrow">Без недосказанности</p><h2 className="mt-4 font-serif text-5xl sm:text-6xl">Частые вопросы</h2></div><Accordion type="single" collapsible className="border-t border-border">{faqs.map(([question, answer], index) => <AccordionItem key={question} value={`item-${index}`}><AccordionTrigger className="py-6 text-base hover:no-underline sm:text-lg"><span className="pr-5 font-medium">{question}</span></AccordionTrigger><AccordionContent className="max-w-2xl pb-6 text-sm leading-relaxed text-muted-foreground">{answer}</AccordionContent></AccordionItem>)}</Accordion></div></section>
 
-      <section className="px-5 py-20 text-center sm:px-8 sm:py-28"><Sparkles className="mx-auto size-7 text-primary" /><h2 className="mx-auto mt-6 max-w-3xl font-serif text-5xl leading-none sm:text-7xl">Увидьте возможный результат до процедуры</h2><p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">На бесплатной 3D-консультации врач оценит анатомию лица и объяснит, какой эффект реалистичен именно для вас.</p><Button variant="luxury" size="luxury" className="mt-8" onClick={openBooking}>Записаться бесплатно <ArrowRight /></Button></section>
+      <section className="px-5 py-20 text-center sm:px-8 sm:py-28"><Sparkles className="mx-auto size-7 text-primary" /><h2 className="mx-auto mt-6 max-w-3xl font-serif text-5xl leading-none sm:text-7xl">Увидьте возможный результат до процедуры</h2><p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">На бесплатной консультации врач оценит анатомию лица и объяснит, какой эффект реалистичен именно для вас.</p><Button variant="luxury" size="luxury" className="mt-8" onClick={openBooking}>Записаться на консультацию <ArrowRight /></Button></section>
 
       <footer className="border-t border-border px-5 py-12 sm:px-8"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3"><div><p className="font-serif text-2xl tracking-[0.12em]">LUMIÈRE</p><p className="mt-3 text-xs text-muted-foreground">Клиника эстетической медицины</p></div><div className="text-sm"><p>+7 (000) 000-00-00</p><p className="mt-2 text-muted-foreground">Москва, адрес клиники</p></div><div className="text-xs leading-relaxed text-muted-foreground md:text-right"><a href="#privacy" className="underline underline-offset-4">Политика конфиденциальности</a><p className="mt-3">Имеются противопоказания. Необходима консультация специалиста. Информация на сайте не является публичной офертой.</p></div></div></footer>
 
