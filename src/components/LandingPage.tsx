@@ -101,9 +101,9 @@ export function LandingPage() {
           <div className="text-center"><p className="eyebrow">Истории пациенток</p><h2 className="mt-4 font-serif text-5xl sm:text-6xl">Результат, который замечают</h2></div>
           <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { name: "Елена", age: 43, city: "Москва", quote: "Коллеги спрашивали, где я так хорошо отдохнула. А я просто снова увидела в зеркале себя — только свежую и спокойную.", note: "Через 6 недель после процедуры" },
+              { name: "Елена", age: 43, city: "Москва", quote: "Результат потрясающий! Контур лица заметно подтянулся, кожа стала плотной и сияющей. Огромное спасибо за профессионализм, деликатность и абсолютный комфорт.", note: "Через 6 недель после процедуры" },
               { name: "Анна", age: 39, city: "Санкт-Петербург", quote: "Боялась, что лицо будет замороженным. Но мимика осталась живой, а овал — чётким. Это именно тот результат, который я хотела.", note: "Через 2 месяца после процедуры" },
-              { name: "Марина", age: 47, city: "Казань", quote: "Процедура заняла чуть больше часа, а выгляжу так, будто выспалась несколько лет. Даже муж заметил разницу.", note: "Через 3 недели после процедуры" },
+              { name: "Марина", age: 47, city: "Казань", quote: "Результат превзошел все ожидания! Лицо как будто подтянулось изнутри, овал стал четким, а кожа засияла так, будто я только что вернулась из двухнедельного отпуска на море.", note: "Через 3 недели после процедуры" },
             ].map((item) => (
               <article key={item.name} className="bg-background p-7 sm:p-8">
                 <div className="flex gap-1 text-primary" aria-label="Оценка 5 из 5"><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /><Star className="size-4 fill-current" /></div>
