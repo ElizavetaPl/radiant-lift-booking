@@ -67,7 +67,7 @@ export function BookingDialog({ open, onOpenChange }: { open: boolean; onOpenCha
             </DialogHeader>
             <div className="mt-7 grid gap-3">
               {([
-                ["online", Video, "Онлайн 3D-моделирование", "Предварительная оценка результата и план коррекции — 30 минут"],
+                ["online", Video, "Онлайн консультация\n", "Предварительная оценка результата и план коррекции — 30 минут"],
                 ["clinic", Sparkles, "Приём в клинике — скидка 50%", "Очная диагностика качества кожи и мягких тканей"],
               ] as const).map(([value, Icon, title, copy]) => (
                 <button
