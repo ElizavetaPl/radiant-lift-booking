@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowDown, ArrowRight, Award, Check, Clock3, FileCheck2, Heart, Menu, ShieldCheck, Sparkles, X } from "lucide-react";
+import { ArrowDown, ArrowRight, Award, Check, Clock3, FileCheck2, Heart, Menu, ShieldCheck, Sparkles, X, type LucideIcon } from "lucide-react";
 
 import heroImage from "@/assets/hero-lifting.jpg";
 import skinImage from "@/assets/skin-detail.jpg";
@@ -13,7 +13,7 @@ const concerns = [
   ["03", "Страшно потерять себя", "Не хотите объёмов, замороженной мимики и заметных следов вмешательства."],
 ];
 
-const guarantees = [
+const guarantees: Array<[LucideIcon, string, string]> = [
   [Clock3, "Без реабилитации", "Возвращайтесь к привычному ритму сразу после визита."],
   [ShieldCheck, "Оригинальные препараты", "Сертифицированная упаковка вскрывается при вас."],
   [FileCheck2, "Медицинский договор", "Прозрачный протокол и официальная ответственность клиники."],
@@ -93,7 +93,7 @@ export function LandingPage() {
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="text-center"><p className="eyebrow">Основа доверия</p><h2 className="mt-4 font-serif text-5xl sm:text-6xl">Красота без компромиссов</h2></div>
-        <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">{guarantees.map(([Icon, title, copy]) => <article key={title as string} className="bg-background p-7"><Icon className="size-6 text-primary" /><h3 className="mt-8 font-serif text-2xl">{title as string}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy as string}</p></article>)}</div>
+        <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">{guarantees.map(([Icon, title, copy]) => <article key={title} className="bg-background p-7"><Icon className="size-6 text-primary" /><h3 className="mt-8 font-serif text-2xl">{title}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy}</p></article>)}</div>
       </section>
 
       <section id="results" className="border-y border-border bg-surface-raised py-20 sm:py-28">

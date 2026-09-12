@@ -97,17 +97,17 @@ export function BookingDialog({ open, onOpenChange }: { open: boolean; onOpenCha
             <div className="mt-7 space-y-5">
               <label className="block text-sm font-medium">Имя
                 <input value={name} onChange={(event) => setName(event.target.value)} maxLength={80} autoComplete="name" className="mt-2 h-12 w-full border border-input bg-surface-raised px-4 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Как к вам обращаться" />
-                {errors.name && <span className="mt-1 block text-xs text-destructive">{errors.name}</span>}
+                {errors['name'] && <span className="mt-1 block text-xs text-destructive">{errors['name']}</span>}
               </label>
               <label className="block text-sm font-medium">Телефон
                 <input value={phone} onChange={(event) => setPhone(event.target.value)} maxLength={20} autoComplete="tel" inputMode="tel" className="mt-2 h-12 w-full border border-input bg-surface-raised px-4 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary" placeholder="+7 (999) 000-00-00" />
-                {errors.phone && <span className="mt-1 block text-xs text-destructive">{errors.phone}</span>}
+                {errors['phone'] && <span className="mt-1 block text-xs text-destructive">{errors['phone']}</span>}
               </label>
               <label className="flex cursor-pointer items-start gap-3 text-xs leading-relaxed text-muted-foreground">
                 <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} className="mt-0.5 size-4 accent-primary" />
                 <span>Согласна на обработку персональных данных и звонок клиники.</span>
               </label>
-              {errors.consent && <span className="block text-xs text-destructive">{errors.consent}</span>}
+              {errors['consent'] && <span className="block text-xs text-destructive">{errors['consent']}</span>}
             </div>
             <Button variant="luxury" size="luxury" className="mt-7 w-full" onClick={submit}>Записаться на консультацию</Button>
             <p className="mt-4 flex items-center justify-center gap-2 text-center text-xs text-muted-foreground"><ShieldCheck className="size-4 text-primary" /> Ваши данные защищены</p>
