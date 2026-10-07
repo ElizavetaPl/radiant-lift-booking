@@ -6,10 +6,22 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// GitHub Pages project sub-path: https://elizavetapi.github.io/radiant-lift-booking/
+const BASE_PATH = "/radiant-lift-booking/";
+
 export default defineConfig({
+  // Static hosting: no server runtime is produced.
+  nitro: false,
+  vite: {
+    base: BASE_PATH,
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
+    router: { basepath: BASE_PATH },
+    spa: {
+      enabled: true,
+      prerender: { outputPath: "/index.html", crawlLinks: false },
+    },
   },
 });
